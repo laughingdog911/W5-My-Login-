@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyLogin" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/orangeAlert</item>
+        <item name="colorOnPrimary">@color/greyLight</item>
+        <item name="colorPrimaryVariant">@color/greyDeep</item>
+        <item name="colorSecondary">@color/greenNeon</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/greenMoss</item>
+    </style>
+
+    <style name="Theme.MyLogin" parent="Base.Theme.MyLogin" />
+</resources>
