@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/entryPoint"
+    android:id="@+id/registerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -21,6 +21,7 @@
             android:padding="10dp">
 
         <ImageButton
+            android:id="@+id/back_btn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/ic_back_btn"
@@ -28,7 +29,7 @@
             android:padding="20dp" />
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/register_appBarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
@@ -118,7 +119,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:layout_weight="2"
-            android:gravity=""
+            android:gravity="center"
             android:text="@string/BDayDP"
             android:textColor="@color/greyDeep"
             android:textSize="12sp" />

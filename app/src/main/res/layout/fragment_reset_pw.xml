@@ -78,6 +78,7 @@
         android:padding="10dp">
 
         <ImageButton
+            android:id="@+id/back_btn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/ic_back_btn"
@@ -85,6 +86,7 @@
             android:onClick="@{(v) -> view.onClick(v)}" />
 
         <TextView
+            android:id="@+id/ResetPW_appBarTitle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingLeft="5dp"
