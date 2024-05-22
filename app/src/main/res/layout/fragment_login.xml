@@ -1,3 +1,11 @@
+<layout>
+
+    <data>
+        <variable
+            name="view"
+            type="com.hj.mylogin.LoginFragment" />
+    </data>
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -5,7 +13,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/green_hello"
-    tools:context="com.LoginFragment">
+    tools:context=".LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -118,3 +126,6 @@
 
 
 </FrameLayout>
+
+
+</layout>

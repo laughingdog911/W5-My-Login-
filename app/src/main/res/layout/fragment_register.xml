@@ -1,252 +1,262 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/registerView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context="com.LoginFragment">
+<?xml version="1.0" encoding="UTF-8" ?>
 
+<layout>
+    <data>
+        <variable
+            name="view"
+            type="com.hj.mylogin.RegisterFragment" />
+    </data>
 
-    <LinearLayout
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/registerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="top"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context="com.LoginFragment">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:layout_margin="10dp"
+            android:gravity="top"
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/ic_back_btn"
-            android:onClick="@{(v) -> view.onClick(v)}"
-            android:padding="20dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
 
-        <TextView
-            android:id="@+id/register_appBarTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:text="@string/register"
-            android:textColor="@color/greenMoss"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-        </LinearLayout>
+                <ImageButton
+                    android:id="@+id/back_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_back_btn"
+                    android:onClick="@{(v) -> view.onClick(v)}"
+                    android:padding="20dp" />
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:drawableStart="@drawable/ic_mail"
-        android:drawablePadding="5dp"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/greyDeep"
-        android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/register_appBarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:text="@string/register"
+                    android:textColor="@color/greenMoss"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-    <EditText
-        android:id="@+id/pw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:drawableStart="@drawable/ic_password"
-        android:drawablePadding="5dp"
-        android:hint="@string/PW"
-        android:inputType="textPassword"
-        android:textColor="@color/greyDeep"
-        android:textSize="14sp" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:drawableStart="@drawable/ic_mail"
+                android:drawablePadding="5dp"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/greyDeep"
+                android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/checkpw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:drawableStart="@drawable/ic_password"
-        android:drawablePadding="5dp"
-        android:hint="@string/checkPW"
-        android:inputType="textPassword"
-        android:textColor="@color/greyDeep"
-        android:textSize="14sp" />
+            <EditText
+                android:id="@+id/pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="5dp"
+                android:hint="@string/PW"
+                android:inputType="textPassword"
+                android:textColor="@color/greyDeep"
+                android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:drawableStart="@drawable/ic_user"
-        android:drawablePadding="5dp"
-        android:hint="@string/name"
-        android:inputType="text"
-        android:textColor="@color/greyDeep"
-        android:textSize="14sp" />
+            <EditText
+                android:id="@+id/checkpw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="5dp"
+                android:hint="@string/checkPW"
+                android:inputType="textPassword"
+                android:textColor="@color/greyDeep"
+                android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/phoneno"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:drawableStart="@drawable/ic_phoneline"
-        android:drawablePadding="5dp"
-        android:hint="@string/phoneNo"
-        android:inputType="phone"
-        android:textColor="@color/greyDeep"
-        android:textSize="14sp" />
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:drawableStart="@drawable/ic_user"
+                android:drawablePadding="5dp"
+                android:hint="@string/name"
+                android:inputType="text"
+                android:textColor="@color/greyDeep"
+                android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/bday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:text="@string/BDay"
-        android:textColor="@color/greenMoss"
-        android:textSize="14sp" />
+            <EditText
+                android:id="@+id/phoneno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:drawableStart="@drawable/ic_phoneline"
+                android:drawablePadding="5dp"
+                android:hint="@string/phoneNo"
+                android:inputType="phone"
+                android:textColor="@color/greyDeep"
+                android:textSize="14sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <TextView
+                android:id="@+id/bday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="@string/BDay"
+                android:textColor="@color/greenMoss"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/bdaydp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:text="@string/BDayDP"
-            android:textColor="@color/greyDeep"
-            android:textSize="12sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/choose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:backgroundTint="@color/Transparent"
-            android:onClick="@{(v) -> view.onClick(v)}"
-            android:text="@string/choose"
-            android:textColor="@color/greenMoss"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/bdaydp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/BDayDP"
+                    android:textColor="@color/greyDeep"
+                    android:textSize="12sp" />
 
-    </LinearLayout>
+                <Button
+                    android:id="@+id/choose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/Transparent"
+                    android:onClick="@{(v) -> view.onClick(v)}"
+                    android:text="@string/choose"
+                    android:textColor="@color/greenMoss"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/membertype"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/memberType"
-        android:textColor="@color/greenMoss"
-        android:textSize="14sp" />
+            </LinearLayout>
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <TextView
+                android:id="@+id/membertype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/memberType"
+                android:textColor="@color/greenMoss"
+                android:textSize="14sp" />
 
-        <RadioButton
-            android:id="@+id/stdtmember"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:buttonTint="@color/greenMoss"
-            android:checked="true"
-            android:onClick="@{(v) -> view.onClick(v)}"
-            android:text="@string/student" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/profmember"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:buttonTint="@color/greenMoss"
-            android:onClick="@{(v) -> view.onClick(v)}"
-            android:text="@string/prof" />
+                <RadioButton
+                    android:id="@+id/stdtmember"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/greenMoss"
+                    android:checked="true"
+                    android:onClick="@{(v) -> view.onClick(v)}"
+                    android:text="@string/student" />
 
-        <RadioButton
-            android:id="@+id/emplmember"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:buttonTint="@color/greenMoss"
-            android:onClick="@{(v) -> view.onClick(v)}"
-            android:text="@string/employee" />
-    </RadioGroup>
+                <RadioButton
+                    android:id="@+id/profmember"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/greenMoss"
+                    android:onClick="@{(v) -> view.onClick(v)}"
+                    android:text="@string/prof" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/emplmember"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/greenMoss"
+                    android:onClick="@{(v) -> view.onClick(v)}"
+                    android:text="@string/employee" />
+            </RadioGroup>
 
-        <CheckBox
-            android:id="@+id/EULAAgree"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="8"
-            android:text="@string/contractAgrmt" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/readEULA"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="@color/Transparent"
-            android:text="@string/read"
-            android:textColor="@color/greenMoss"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+                <CheckBox
+                    android:id="@+id/EULAAgree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:text="@string/contractAgrmt" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                <Button
+                    android:id="@+id/readEULA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/Transparent"
+                    android:text="@string/read"
+                    android:textColor="@color/greenMoss"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-        <CheckBox
-            android:id="@+id/informaticsAgree"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="8"
-            android:text="@string/infoAgrmt" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/readInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="@color/Transparent"
-            android:text="@string/read"
-            android:textColor="@color/greenMoss"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+                <CheckBox
+                    android:id="@+id/informaticsAgree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:text="@string/infoAgrmt" />
 
-    </LinearLayout>
+                <Button
+                    android:id="@+id/readInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/Transparent"
+                    android:text="@string/read"
+                    android:textColor="@color/greenMoss"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/confirm_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/round_button"
-        android:onClick="@{(v) -> view.onClick(v)}"
-        android:text="@string/register"
-        android:textColor="@color/greyDeep"
-        android:textStyle="bold"
-        android:visibility="visible" />
+            </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:visibility="gone" />
-</LinearLayout></FrameLayout>
+            <Button
+                android:id="@+id/confirm_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/round_button"
+                android:onClick="@{(v) -> view.onClick(v)}"
+                android:text="@string/register"
+                android:textColor="@color/greyDeep"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone" />
+        </LinearLayout></FrameLayout>
+</layout>
