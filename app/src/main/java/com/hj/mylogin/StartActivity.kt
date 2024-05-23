@@ -14,9 +14,6 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
 
-        val transactionManager = supportFragmentManager.beginTransaction()
-        transactionManager.replace(R.id.main, LoginFragment())
-        transactionManager.commit()
     }
 
 
