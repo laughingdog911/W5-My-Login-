@@ -28,12 +28,12 @@ class ResetPwFragment : Fragment() {
         val email = binding.email.text.toString()
 
         when (v) {
-            binding.backBtn -> {
+            binding.backBtn -> {                                                                // 로그인 화면으로 전환
                 (activity as StartActivity).supportFragmentManager.popBackStack()
             }
 
             binding.sendButton -> {
-                if (email.isEmpty()) {
+                if (email.isEmpty()) {                                                          //1. 공백 필드
                     AlertDialog.Builder(activity as StartActivity).run {
                         setIcon(android.R.drawable.ic_dialog_alert)
                         setTitle("공백 필드")
@@ -42,7 +42,7 @@ class ResetPwFragment : Fragment() {
                         show()
                     }
                 } else {
-                    AlertDialog.Builder(activity as StartActivity).run {
+                    AlertDialog.Builder(activity as StartActivity).run {      //2. 전송 완료
                         setIcon(android.R.drawable.ic_dialog_email)
                         setTitle("전송 완료")
                         setMessage("입력하신 이메일로 비밀번호 재설정 링크를 전송했습니다. \n 링크를 확인하여 비밀번호를 다시 설정해 주세요.")

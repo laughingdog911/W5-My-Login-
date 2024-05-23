@@ -32,25 +32,25 @@ class LoginFragment : Fragment() {
 
         when (v) {
             binding.resetPWButton -> {
-                val transactionManager =
+                val transactionManager =                                                        // 비밀번호 재설정 버튼: 비밀번호 재설정 화면으로 전환
                     (activity as StartActivity).supportFragmentManager.beginTransaction()
                 transactionManager.replace(R.id.entryPoint, ResetPwFragment()).commit()
             }
 
-            binding.registerButton -> {
+            binding.registerButton -> {                                                         // 화원가입 버튼 : 회원가입 화면으로 전환
                 val transactionManager =
                     (activity as StartActivity).supportFragmentManager.beginTransaction()
                 transactionManager.replace(R.id.entryPoint, RegisterFragment()).commit()
             }
 
-            binding.loginButton -> {
-                val empty = "empty"
+            binding.loginButton -> {                                                            // 로그인 버튼 :
+                val empty = "empty"                                                             //이메일, 비밀번호 란이 비었는지 확인:
                 for (i in infoList.indices) {
                     if (infoList[i].isEmpty()) {
                         infoList[i] = empty
                     }
                 }
-                if (infoList.any { it == empty }) {
+                if (infoList.any { it == empty }) {                                             // 1. 공백 필드
                     AlertDialog.Builder(activity as StartActivity).run {
                         setIcon(android.R.drawable.ic_dialog_alert)
                         setTitle("공백 필드")
@@ -58,9 +58,8 @@ class LoginFragment : Fragment() {
                         setPositiveButton("확인", null)
                         show()
                     }
-                }else {
-                    binding.loginButton.visibility = View.INVISIBLE
-                    binding.progressBar.visibility = View.VISIBLE
+                }else {                                                                         //2. 다 채워 넣고 로그인 버튼을 눌렀을 때:
+                    binding.progressCircular.visibility = View.VISIBLE                          //progress 띄우기.
                 }
             }
         }

@@ -148,7 +148,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/membertype"
+                android:id="@+id/memberType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/memberType"
@@ -161,7 +161,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/stdtmember"
+                    android:id="@+id/stdnt_member"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -171,7 +171,7 @@
                     android:text="@string/student" />
 
                 <RadioButton
-                    android:id="@+id/profmember"
+                    android:id="@+id/prof_member"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -180,7 +180,7 @@
                     android:text="@string/prof" />
 
                 <RadioButton
-                    android:id="@+id/emplmember"
+                    android:id="@+id/mpl_member"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -252,7 +252,7 @@
                 android:visibility="visible" />
 
             <ProgressBar
-                android:id="@+id/progressBar"
+                android:id="@+id/progress_circular"
                 style="?android:attr/progressBarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

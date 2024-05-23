@@ -12,6 +12,18 @@ import androidx.fragment.app.Fragment
 import com.hj.mylogin.databinding.FragmentRegisterBinding
 import java.util.Calendar
 
+enum class UserType{
+    STUDENT {
+        override fun getString() = "교수"
+            },
+    PROFESSOR {
+        override fun getString() = "교수"
+              },
+    EMPLOYEE {
+        override fun getString() = "교직원"
+    };
+    abstract fun getString(): String
+}
 class RegisterFragment : Fragment() {
     private lateinit var binding: FragmentRegisterBinding
 
@@ -24,9 +36,7 @@ class RegisterFragment : Fragment() {
         binding = DataBindingUtil.setContentView((activity as StartActivity), R.layout.fragment_register)
         return binding.root
     }
-    private fun getString():String(
-        return if(selectedType.value == )
-    )
+
     fun onClick(v: View) {
         val phoneNumber = binding.phoneno.text.toString()
         val email = binding.email.text.toString()
@@ -56,9 +66,9 @@ class RegisterFragment : Fragment() {
                 ).show()
             }
 
-            binding.stdtmember -> {TODO()}
-            binding.profmember -> { TODO() }
-            binding.emplmember -> { TODO() }
+            binding.stdntMember ->{ TODO() }
+            binding.profMember ->{ TODO() }
+            binding.mplMember ->{ TODO() }
 
             binding.confirmButton -> {
                 val empty = "empty"
@@ -67,7 +77,7 @@ class RegisterFragment : Fragment() {
                         infoList[i] = empty
                     }
                 }
-                if (infoList.any { it == empty }) {                            //1. 공백필드 !!!!!!!!
+                if (infoList.any { it == empty }) {                            //1. 공백필드
                     AlertDialog.Builder(activity as StartActivity).run {
                         setIcon(android.R.drawable.ic_dialog_alert)
                         setTitle("공백 필드")
@@ -115,14 +125,14 @@ class RegisterFragment : Fragment() {
                                 "이메일: ${email}\n" +
                                 "생년월일: ${birthday}\n" +                           //회원 유형도 넣기!!!!!!
                                 "전화 번호: ${phoneNumber}\n" +
-                                "멤버 유형: ${selectedType.member}")
+                                "멤버 유형: ${UserType.entries}")
                         setIcon(android.R.drawable.ic_dialog_info)
-                        setPositiveButton("예") { dialogInterface, which ->
+                        setPositiveButton("예") { dialogInterface, _ ->
                             dialogInterface.dismiss()
                             binding.confirmButton.visibility = View.INVISIBLE
-                            binding.progressBar.visibility = View.VISIBLE
+                            binding.progressCircular.visibility = View.VISIBLE
                         }
-                        setNegativeButton("아니오") { dialogInterface, which ->
+                        setNegativeButton("아니오") { dialogInterface, _ ->
                             dialogInterface.dismiss()
                         }
                         show()
