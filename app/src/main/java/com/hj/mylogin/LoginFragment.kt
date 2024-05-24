@@ -2,6 +2,7 @@ package com.hj.mylogin
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +22,10 @@ class LoginFragment : Fragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding =
-            DataBindingUtil.setContentView((activity as StartActivity), R.layout.fragment_login)
+            DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        binding.view = this
+        binding.lifecycleOwner = this
+
         return binding.root
     }
 
@@ -34,13 +38,13 @@ class LoginFragment : Fragment() {
             binding.resetPWButton -> {
                 val transactionManager =                                                        // 비밀번호 재설정 버튼: 비밀번호 재설정 화면으로 전환
                     (activity as StartActivity).supportFragmentManager.beginTransaction()
-                transactionManager.replace(R.id.entryPoint, ResetPwFragment()).commit()
+                transactionManager.replace(R.id.entryPoint, ResetPwFragment()).addToBackStack("").commit()
             }
 
             binding.registerButton -> {                                                         // 화원가입 버튼 : 회원가입 화면으로 전환
                 val transactionManager =
                     (activity as StartActivity).supportFragmentManager.beginTransaction()
-                transactionManager.replace(R.id.entryPoint, RegisterFragment()).commit()
+                transactionManager.replace(R.id.entryPoint, RegisterFragment()).addToBackStack("").commit()
             }
 
             binding.loginButton -> {                                                            // 로그인 버튼 :

@@ -19,7 +19,9 @@ class ResetPwFragment : Fragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding =
-            DataBindingUtil.setContentView((activity as StartActivity), R.layout.fragment_reset_pw)
+            DataBindingUtil.inflate(inflater, R.layout.fragment_reset_pw, container, false)
+        binding.view = this
+        binding.lifecycleOwner = this
 
         return binding.root
     }

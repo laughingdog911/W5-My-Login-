@@ -5,7 +5,11 @@
         <variable
             name="view"
             type="com.hj.mylogin.RegisterFragment" />
+
+        <import type="com.hj.mylogin.UserType"/>
     </data>
+
+
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -161,30 +165,32 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/stdnt_member"
+                    android:id="@+id/std_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:buttonTint="@color/greenMoss"
-                    android:checked="true"
+                    android:checked="@{view.selectedType.equals(`학생`)}"
                     android:onClick="@{(v) -> view.onClick(v)}"
                     android:text="@string/student" />
 
                 <RadioButton
-                    android:id="@+id/prof_member"
+                    android:id="@+id/prof_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:buttonTint="@color/greenMoss"
+                    android:checked="@{view.selectedType.equals(`교수`)}"
                     android:onClick="@{(v) -> view.onClick(v)}"
                     android:text="@string/prof" />
 
                 <RadioButton
-                    android:id="@+id/mpl_member"
+                    android:id="@+id/mpl_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:buttonTint="@color/greenMoss"
+                    android:checked="@{view.selectedType.equals(`교직원`)}"
                     android:onClick="@{(v) -> view.onClick(v)}"
                     android:text="@string/employee" />
             </RadioGroup>

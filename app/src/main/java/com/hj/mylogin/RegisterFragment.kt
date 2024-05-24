@@ -9,23 +9,15 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.hj.mylogin.UserType.EMPLOYEE
+import com.hj.mylogin.UserType.PROFESSOR
+import com.hj.mylogin.UserType.STUDENT
 import com.hj.mylogin.databinding.FragmentRegisterBinding
 import java.util.Calendar
 
-enum class UserType{
-    STUDENT {
-        override fun getString() = "교수"
-            },
-    PROFESSOR {
-        override fun getString() = "교수"
-              },
-    EMPLOYEE {
-        override fun getString() = "교직원"
-    };
-    abstract fun getString(): String
-}
 class RegisterFragment : Fragment() {
     private lateinit var binding: FragmentRegisterBinding
+    var selectedType: String = "학생"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +25,10 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        binding = DataBindingUtil.setContentView((activity as StartActivity), R.layout.fragment_register)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false)
+        binding.view = this
+        binding.lifecycleOwner = this
+
         return binding.root
     }
 
@@ -61,14 +56,14 @@ class RegisterFragment : Fragment() {
 
             binding.choose -> {
                 DatePickerDialog(
-                    (activity as StartActivity), selectedDate, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),   //this = context  required butttttttt
+                    (activity as StartActivity), selectedDate, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),   //this = activity?
                     calendar.get(Calendar.DAY_OF_MONTH)
                 ).show()
             }
 
-            binding.stdntMember ->{ TODO() }
-            binding.profMember ->{ TODO() }
-            binding.mplMember ->{ TODO() }
+            binding.stdBtn ->{ selectedType = UserType.STUDENT.getString() }
+            binding.profBtn ->{ selectedType = UserType.PROFESSOR.getString() }
+            binding.mplBtn ->{ selectedType = UserType.EMPLOYEE.getString() }
 
             binding.confirmButton -> {
                 val empty = "empty"
@@ -123,9 +118,9 @@ class RegisterFragment : Fragment() {
                         setMessage("다음 정보로 가입을 진행하시겠습니까?\n" +
                                 "이름: ${name}\n" +
                                 "이메일: ${email}\n" +
-                                "생년월일: ${birthday}\n" +                           //회원 유형도 넣기!!!!!!
+                                "생년월일: ${birthday}\n" +
                                 "전화 번호: ${phoneNumber}\n" +
-                                "멤버 유형: ${UserType.entries}")
+                                "멤버 유형: $selectedType")
                         setIcon(android.R.drawable.ic_dialog_info)
                         setPositiveButton("예") { dialogInterface, _ ->
                             dialogInterface.dismiss()
